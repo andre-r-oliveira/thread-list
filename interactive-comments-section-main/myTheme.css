@@ -1,0 +1,227 @@
+:root {
+
+  /*  Primary  */
+  --color-moderate-blue: #5357B6;
+  --color-soft-red: #ED6368;
+  --color-light-gray: #E9EBF0;
+  --color-pale-red: #FFB8BB;
+
+
+  /*  Secondary   */
+  --color-dark-blue: #334253;
+  --color-grayish-blue: #67727E;
+  --color-light-grayishblue: #C5C6EF;
+  --color-verylight-gray: #F5F6FA;
+  --color-white: #FFFFFF;
+}
+
+body {
+  font-family: 'Rubik';
+  font-size: 16px;
+  color: var(--color-grayish-blue);
+  background: var(--color-verylight-gray);
+}
+
+main {
+  max-width: 730px;
+  margin: auto;
+}
+
+.card__rating p {
+  padding-block: 0;
+  padding-inline: 0;
+  border: 0;
+  flex: 1;
+  background: var(--color-verylight-gray);
+  text-align: center;
+  padding: 5px 5px;
+  width: 30px;
+  color: var(--color-moderate-blue);
+  font-weight: bold;
+  margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.card {
+  background: var(--color-white);
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.card__content {
+  padding-inline-start: 24px;
+  flex:1;
+}
+
+.card__content--title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__content--main {
+  padding-top: 16px;
+}
+
+.user--banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 24px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 24px;
+}
+
+.user--banner .user-name {
+  color: var(--color-dark-blue);
+  font-weight: 500;
+}
+
+.user--actions {
+  cursor: pointer;
+}
+
+.user--actions .action img {
+  padding-right: 8px;
+}
+
+.user--actions .action.--delete {
+  color: var(--color-soft-red);
+}
+
+.user--actions__owner,
+.user--actions__not-owner {
+  display: flex;
+  gap: 24px;
+  color: var(--color-moderate-blue);
+  font-weight: 500;
+}
+
+.card.is--owner>.card__content>.card__content--title .user--actions__not-owner,
+.card:not(.is--owner)>.card__content>.card__content--title .user--actions__owner {
+  display: none;
+}
+
+.card:not(.is--owner) .tag {
+  display: none
+}
+
+.tag {
+  padding: 1px 6px;
+  background: var(--color-moderate-blue);
+  color: var(--color-white);
+  font-size: 13px;
+  text-transform: lowercase;
+  border-radius: 2px;
+}
+
+.thread .card {
+  display: flex;
+}
+
+.card__rating {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-neutral-8);
+  width: 40px;
+}
+
+.rating-button {
+  position: relative;
+  background: var(--color-verylight-gray);
+  height: 35px;
+}
+
+.card__rating .rating-button,
+.card__rating .rating-button input[type="button"] {
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.card__rating .rating-button:last-child,
+.card__rating .rating-button:last-child input[type="button"] {
+  border-radius: 0 0 10px 10px;
+}
+
+.rating-button img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card__rating input[type="button"] {
+  border: 0;
+  background: var(--color-verylight-gray);
+  width: 100%;
+  height: 100%;
+}
+
+.card__rating .rating-button:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.thread__list .card {
+  position: relative;
+}
+
+.thread__list .card+.card {
+  margin-top: 20px;
+}
+
+.thread__list .card.first-level {
+  margin-top: 24px;
+  margin-left: 88px;
+}
+
+.thread__list .card.first-level::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  left: -44px;
+  background-color: var(--color-light-gray);
+}
+
+.thread__list .card[class$="-level"]+.card[class$="-level"]::after {
+  top: calc(-1*24px);
+}
+
+.thread__footer {
+  padding-top: 20px;
+}
+
+.thread__footer .card {
+  gap: 16px;
+}
+
+.thread__footer textarea {
+  flex: 1;
+  padding: 12px 24px;
+  border-radius: 8px;
+  resize: none;
+}
+
+.thread__footer .avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.thread__footer input[type="button"] {
+  width: 104px;
+  height: 48px;
+  background-color: var(--color-moderate-blue);
+  border-radius: 8px;
+  border: 0;
+  color: var(--color-white);
+  font-weight: bold;
+}
